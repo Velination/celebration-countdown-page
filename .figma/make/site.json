@@ -1,0 +1,10 @@
+{
+  "description": "Engage customers with a stunning Christmas countdown display that highlights remaining time until Christmas, enhancing festive shopping experiences in retail stores.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

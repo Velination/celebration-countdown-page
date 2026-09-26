@@ -1,0 +1,646 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: "Montserrat", sans-serif;
+  color: #fffaf0;
+  background: #7d0717;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+.christmas-display {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: clamp(28px, 3.1vw, 60px) clamp(26px, 4.2vw, 80px)
+    clamp(24px, 2.8vw, 54px);
+  background:
+    radial-gradient(circle at 51% 41%, rgba(199, 48, 53, 0.46) 0, transparent 43%),
+    radial-gradient(circle at 8% 96%, rgba(252, 194, 90, 0.11) 0, transparent 28%),
+    radial-gradient(circle at 94% 8%, rgba(248, 194, 92, 0.1) 0, transparent 24%),
+    linear-gradient(137deg, #760717 0%, #a20e20 47%, #740515 100%);
+}
+
+.christmas-display::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.19;
+  background-image:
+    repeating-radial-gradient(circle at 0 0, transparent 0, #fff 1px, transparent 2px, transparent 8px),
+    linear-gradient(100deg, transparent 49.8%, rgba(255, 255, 255, 0.12) 50%, transparent 50.2%);
+  background-size: 11px 11px, 180px 100%;
+  mix-blend-mode: soft-light;
+}
+
+.christmas-display::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  pointer-events: none;
+  box-shadow: inset 0 0 170px 30px rgba(44, 0, 9, 0.52);
+}
+
+.campaign-header {
+  position: relative;
+  z-index: 10;
+}
+
+.placeholder-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff6df;
+}
+
+.placeholder-logo__mark {
+  display: grid;
+  place-items: center;
+  width: clamp(42px, 3.1vw, 58px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(245, 204, 119, 0.8);
+  transform: rotate(45deg);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(25px, 1.8vw, 34px);
+  font-weight: 700;
+  color: #f4cf82;
+  box-shadow: inset 0 0 0 4px rgba(127, 10, 24, 0.9);
+}
+
+.placeholder-logo__mark::first-letter {
+  transform: rotate(-45deg);
+}
+
+.placeholder-logo__type {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.placeholder-logo__type b {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(15px, 1.25vw, 23px);
+  line-height: 1;
+}
+
+.placeholder-logo__type small {
+  color: #e8c77e;
+  font-size: clamp(6px, 0.48vw, 9px);
+  letter-spacing: 0.32em;
+}
+
+.countdown-content {
+  position: relative;
+  z-index: 5;
+  align-self: center;
+  width: min(80vw, 1320px);
+  margin: clamp(-30px, -2vh, -12px) auto 0;
+  text-align: center;
+}
+
+.eyebrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(10px, 1.2vw, 22px);
+  margin-bottom: clamp(8px, 1.1vh, 16px);
+  color: #f0cc82;
+}
+
+.eyebrow p {
+  margin: 0;
+  font-size: clamp(8px, 0.71vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.27em;
+  text-transform: uppercase;
+}
+
+.eyebrow span {
+  width: clamp(28px, 4vw, 72px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e9c272);
+}
+
+.eyebrow span:last-child {
+  transform: rotate(180deg);
+}
+
+.eyebrow svg {
+  width: clamp(10px, 0.8vw, 15px);
+  fill: #efcc84;
+}
+
+.countdown-content h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(46px, 5.3vw, 102px);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  text-shadow: 0 3px 22px rgba(58, 0, 8, 0.38);
+}
+
+.title-flourish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: min(240px, 28vw);
+  margin: clamp(13px, 1.6vh, 24px) auto clamp(19px, 2.8vh, 42px);
+  color: #eac477;
+}
+
+.title-flourish span {
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #eac477);
+}
+
+.title-flourish span:last-child {
+  transform: rotate(180deg);
+}
+
+.title-flourish i {
+  font-size: 8px;
+  font-style: normal;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(15px, 1.55vw, 30px);
+}
+
+.countdown-card {
+  position: relative;
+  min-width: 0;
+  padding: clamp(20px, 2.2vw, 42px) 16px clamp(18px, 1.65vw, 32px);
+  overflow: hidden;
+  border: 1px solid rgba(240, 202, 128, 0.65);
+  border-radius: 5px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.095), transparent 50%),
+    rgba(86, 1, 15, 0.32);
+  box-shadow:
+    inset 0 0 0 4px rgba(130, 10, 27, 0.62),
+    inset 0 0 32px rgba(255, 221, 155, 0.05),
+    0 12px 38px rgba(45, 0, 7, 0.24),
+    0 0 25px rgba(248, 194, 90, 0.06);
+  backdrop-filter: blur(5px);
+}
+
+.countdown-card::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  top: -65%;
+  left: -40%;
+  transform: rotate(35deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+}
+
+.countdown-card strong {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(62px, 6.7vw, 128px);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+  line-height: 0.78;
+  letter-spacing: -0.055em;
+  text-shadow: 0 3px 28px rgba(255, 239, 210, 0.12);
+}
+
+.countdown-card p {
+  margin: 0;
+  color: #f0ce8b;
+  font-size: clamp(9px, 0.8vw, 15px);
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-indent: 0.32em;
+  text-transform: uppercase;
+}
+
+.card-divider {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: min(120px, 65%);
+  margin: clamp(17px, 1.65vw, 31px) auto clamp(12px, 1.15vw, 22px);
+}
+
+.card-divider span {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, rgba(238, 198, 119, 0.72));
+}
+
+.card-divider span:last-child {
+  transform: rotate(180deg);
+}
+
+.card-divider i {
+  width: 4px;
+  height: 4px;
+  transform: rotate(45deg);
+  background: #efc774;
+}
+
+.card-corner {
+  position: absolute;
+  top: 10px;
+  width: 14px;
+  height: 14px;
+  border-top: 1px solid rgba(248, 213, 147, 0.72);
+}
+
+.card-corner--tl {
+  left: 10px;
+  border-left: 1px solid rgba(248, 213, 147, 0.72);
+}
+
+.card-corner--tr {
+  right: 10px;
+  border-right: 1px solid rgba(248, 213, 147, 0.72);
+}
+
+footer {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 1.7vw, 32px);
+  color: #f8e4ba;
+}
+
+footer p {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(15px, 1.35vw, 26px);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+footer span {
+  width: clamp(38px, 5vw, 96px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(239, 204, 137, 0.62));
+}
+
+footer span:last-child {
+  transform: rotate(180deg);
+}
+
+.pine-branch {
+  position: absolute;
+  z-index: 2;
+  width: clamp(250px, 27vw, 520px);
+  opacity: 0.85;
+  filter: drop-shadow(0 8px 18px rgba(27, 0, 5, 0.28));
+}
+
+.pine-branch--left {
+  left: -5.5vw;
+  bottom: -4.5vw;
+  transform: rotate(4deg);
+}
+
+.pine-branch--right {
+  top: -3.5vw;
+  right: -5vw;
+  transform: rotate(186deg);
+}
+
+.hanging-ornaments {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 15.5%;
+  display: flex;
+  gap: 45px;
+}
+
+.ornament {
+  position: relative;
+  display: block;
+  width: clamp(20px, 2vw, 38px);
+  aspect-ratio: 1;
+  margin-top: 84px;
+  border: 1px solid #e5bd6f;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 28%, #fb7074, #b61227 45%, #6d0715 100%);
+  box-shadow: inset -5px -6px 10px rgba(55, 0, 7, 0.3), 0 8px 18px rgba(47, 0, 6, 0.35);
+  animation: ornament-sway 5s ease-in-out infinite;
+  transform-origin: 50% -90px;
+}
+
+.ornament::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  width: 1px;
+  height: 90px;
+  background: linear-gradient(#d6ad61, #edcf8d);
+}
+
+.ornament::after {
+  content: "";
+  position: absolute;
+  left: 30%;
+  top: -5px;
+  width: 40%;
+  height: 6px;
+  border-radius: 2px 2px 0 0;
+  background: #d5aa5a;
+}
+
+.ornament--two {
+  width: clamp(14px, 1.35vw, 26px);
+  margin-top: 55px;
+  animation-delay: -1.6s;
+  background: radial-gradient(circle at 35% 28%, #ffe6a1, #d29e3f 48%, #8b5f17 100%);
+  transform-origin: 50% -60px;
+}
+
+.ornament--two::before {
+  height: 60px;
+}
+
+.gift-stack {
+  position: absolute;
+  z-index: 4;
+  right: clamp(18px, 3vw, 58px);
+  bottom: clamp(32px, 3vw, 58px);
+  width: clamp(105px, 10vw, 190px);
+  height: clamp(76px, 7vw, 134px);
+  filter: drop-shadow(0 14px 18px rgba(43, 0, 6, 0.28));
+}
+
+.gift {
+  position: absolute;
+  bottom: 0;
+  border: 1px solid rgba(255, 230, 168, 0.75);
+  border-radius: 2px;
+  background:
+    linear-gradient(90deg, transparent 41%, #deb15b 41%, #deb15b 59%, transparent 59%),
+    linear-gradient(#a11225, #700714);
+}
+
+.gift::before,
+.gift::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  width: 27%;
+  height: 30%;
+  border: 5px solid #d9ad59;
+  border-bottom: 0;
+  border-radius: 80% 20% 0 0;
+}
+
+.gift::before {
+  left: 50%;
+  transform: rotate(-10deg);
+}
+
+.gift::after {
+  right: 50%;
+  transform: scaleX(-1) rotate(-10deg);
+}
+
+.gift span {
+  position: absolute;
+  left: -4%;
+  top: 20%;
+  width: 108%;
+  height: 18%;
+  background: #dfb35e;
+}
+
+.gift--large {
+  right: 0;
+  width: 60%;
+  height: 74%;
+}
+
+.gift--small {
+  left: 0;
+  width: 48%;
+  height: 54%;
+  background:
+    linear-gradient(90deg, transparent 39%, #e5c071 39%, #e5c071 61%, transparent 61%),
+    linear-gradient(#1b5239, #0b2d22);
+}
+
+.ambient-glow {
+  position: absolute;
+  z-index: 1;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffd88a;
+  box-shadow: 0 0 13px 5px rgba(255, 203, 112, 0.48);
+  animation: light-pulse 3.2s ease-in-out infinite;
+}
+
+.ambient-glow--one {
+  top: 23%;
+  left: 5%;
+}
+
+.ambient-glow--two {
+  right: 7%;
+  bottom: 27%;
+  animation-delay: -1.8s;
+}
+
+.snow {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.snow i {
+  position: absolute;
+  top: -3vh;
+  left: var(--left);
+  width: var(--size);
+  height: var(--size);
+  opacity: var(--opacity);
+  border-radius: 50%;
+  background: #fff;
+  filter: blur(0.3px);
+  animation: snowfall var(--duration) linear var(--delay) infinite;
+}
+
+.christmas-arrived {
+  padding: 7vh 0;
+  animation: arrival 1.2s ease-out both;
+}
+
+.christmas-arrived h1 {
+  font-size: clamp(62px, 8.6vw, 165px);
+  color: #fff8e9;
+  text-shadow: 0 0 42px rgba(255, 216, 132, 0.32);
+}
+
+.christmas-arrived p {
+  margin: 20px 0 0;
+  color: #f2ce87;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(21px, 2vw, 38px);
+  font-style: italic;
+}
+
+.christmas-arrived__star {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: #f3cb7d;
+  font-size: clamp(28px, 3vw, 56px);
+  animation: star-shimmer 2.2s ease-in-out infinite;
+}
+
+@keyframes snowfall {
+  from {
+    transform: translate3d(0, -5vh, 0) rotate(0);
+  }
+  to {
+    transform: translate3d(var(--drift), 108vh, 0) rotate(360deg);
+  }
+}
+
+@keyframes ornament-sway {
+  0%,
+  100% {
+    transform: rotate(-2.5deg);
+  }
+  50% {
+    transform: rotate(2.5deg);
+  }
+}
+
+@keyframes light-pulse {
+  50% {
+    opacity: 0.45;
+    transform: scale(0.75);
+  }
+}
+
+@keyframes arrival {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+}
+
+@keyframes star-shimmer {
+  50% {
+    transform: rotate(90deg) scale(1.2);
+    filter: drop-shadow(0 0 12px #f6cf7d);
+  }
+}
+
+@media (max-aspect-ratio: 4 / 3) {
+  .countdown-content {
+    width: min(88vw, 900px);
+  }
+
+  .countdown-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .countdown-card strong {
+    font-size: clamp(54px, 11vw, 105px);
+  }
+
+  .gift-stack {
+    opacity: 0.72;
+  }
+}
+
+@media (max-width: 620px) {
+  .christmas-display {
+    padding: 24px 20px 22px;
+  }
+
+  .placeholder-logo__type {
+    display: none;
+  }
+
+  .countdown-content {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .eyebrow p {
+    max-width: 230px;
+    line-height: 1.5;
+  }
+
+  .countdown-grid {
+    gap: 10px;
+  }
+
+  .countdown-card {
+    padding: 22px 8px 18px;
+  }
+
+  .countdown-card p {
+    letter-spacing: 0.18em;
+    text-indent: 0.18em;
+  }
+
+  .pine-branch {
+    width: 230px;
+    opacity: 0.55;
+  }
+
+  .hanging-ornaments {
+    right: 10%;
+  }
+
+  .gift-stack {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snow i,
+  .ornament,
+  .ambient-glow,
+  .christmas-arrived,
+  .christmas-arrived__star {
+    animation: none;
+  }
+}
