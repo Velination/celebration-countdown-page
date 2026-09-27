@@ -137,7 +137,7 @@ function App() {
   >
     <img
   src={`${import.meta.env.BASE_URL}Celebrations.png`}
-  alt="Celebrations"
+  alt="Celebratins"
   style={{
     width: "280px",
     height: "auto",
