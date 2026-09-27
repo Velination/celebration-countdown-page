@@ -136,7 +136,7 @@ function App() {
     }}
   >
     <img
-      src="/logo.png"
+      src="/Celebrations.png"
       alt="Celebrations"
       style={{
         width: "280px",
