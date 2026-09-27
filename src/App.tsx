@@ -136,16 +136,16 @@ function App() {
     }}
   >
     <img
-      src="/Celebrations.png"
-      alt="Celebrations"
-      style={{
-        width: "280px",
-        height: "auto",
-        maxWidth: "100%",
-        objectFit: "contain",
-        display: "block",
-      }}
-    />
+  src={`${import.meta.env.BASE_URL}Celebrations.png`}
+  alt="Celebrations"
+  style={{
+    width: "280px",
+    height: "auto",
+    maxWidth: "100%",
+    objectFit: "contain",
+    display: "block",
+  }}
+/>
   </div>
 </header>
 
